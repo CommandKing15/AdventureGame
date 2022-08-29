@@ -64,7 +64,7 @@ def combat(playerH, playerA, enemyN, enemyH, enemyA, roomToBeDone, amountofenemi
                     print("You attacked the " + str(enemyN) + " and it has " + str(enemyH) + " HP left...")
             else:
                 print("You missed!")
-    return roomToBeDone
+    return playerH
 
 
 class Room:
@@ -75,10 +75,10 @@ class Room:
         self.aAttack = radn(4)
         self.pHealth = radn(20)
         self.pAttack = radn(5)
-        self.ratsInB = random.randint(1, 3)
+        self.ratsInB = 2 #random.randint(1, 3)
         self.ratsInC = random.randint(1, 3)
         self.ratsInD = random.randint(1, 3)
-        self.adone = False
+        self.adone = True
         self.bdone = False
         self.cdone = False
         self.ddone = False
@@ -149,7 +149,8 @@ class Room:
                 time.sleep(1)
                 exit(0)
             elif r1Num == 4:
-                if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.adone, 1):
+                self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.adone, 1)
+                if self.pHeatlh > 0:
                     self.adone = True
 
                 print("""
@@ -268,35 +269,57 @@ class Room:
                 else:
                     print("The traveler could not get away...")
                     if self.ratsInB == 1:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
-                                  self.ratsInB):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                              self.ratsInB)
+                        if self.pHeatlh > 0:
                             self.bdone = True
                     elif self.ratsInB == 2:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
-                                  self.ratsInB) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack, self.bdone, self.ratsInB):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                              self.ratsInB)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack, self.bdone, self.ratsInB)
+                        if self.pHeatlh > 0:
                             self.bdone = True
                     elif self.ratsInB == 3:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
-                                  self.ratsInB) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack, self.bdone, self.ratsInB) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone, self.ratsInB):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                              self.ratsInB)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack, self.bdone, self.ratsInB)
+                        self.pHeatlh = combat(self.pHealth,
+                                              self.pAttack,
+                                              "rat",
+                                              self.rHealth,
+                                              self.rAttack,
+                                              self.bdone,
+                                              self.ratsInB)
+                        if self.pHeatlh > 0:
                             self.bdone = True
             elif r2Num == 2:
                 if self.ratsInB == 1:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone, self.ratsInB):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                          self.ratsInB)
+                    if self.pHeatlh > 0:
                         self.bdone = True
                 elif self.ratsInB == 2:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
-                              self.ratsInB) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.bdone, self.ratsInB):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                          self.ratsInB)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack, self.bdone, self.ratsInB)
+                    if self.pHeatlh > 0:
                         self.bdone = True
                 elif self.ratsInB == 3:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
-                              self.ratsInB) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.bdone, self.ratsInB) and combat(self.pHealth, self.pAttack,
-                                                                                            "rat", self.rHealth,
-                                                                                            self.rAttack, self.bdone,
-                                                                                            self.ratsInB):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.bdone,
+                                          self.ratsInB)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack, self.bdone, self.ratsInB)
+                    self.pHeatlh = combat(self.pHealth,
+                                          self.pAttack,
+                                          "rat",
+                                          self.rHealth,
+                                          self.rAttack,
+                                          self.bdone,
+                                          self.ratsInB)
+                    if self.pHeatlh > 0:
                         self.bdone = True
                 print("""
 
@@ -420,42 +443,61 @@ class Room:
                     self.bnorat()
                 else:
                     if self.ratsInC == 1:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
-                                  self.ratsInC):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                              self.ratsInC)
+                        if self.pHeatlh > 0:
                             self.cdone = True
                     elif self.ratsInB == 2:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
-                                  self.ratsInC) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack,
-                                                           self.cdone, self.ratsInC):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                              self.ratsInC)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack,
+                                              self.cdone, self.ratsInC)
+                        if self.pHeatlh > 0:
                             self.cdone = True
                     elif self.ratsInC == 3:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
-                                  self.ratsInC) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack,
-                                                           self.cdone, self.ratsInC) and combat(self.pHealth,
-                                                                                                self.pAttack,
-                                                                                                "rat", self.rHealth,
-                                                                                                self.rAttack,
-                                                                                                self.cdone,
-                                                                                                self.ratsInC):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                              self.ratsInC)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack,
+                                              self.cdone, self.ratsInC)
+                        self.pHeatlh = combat(self.pHealth,
+                                              self.pAttack,
+                                              "rat",
+                                              self.rHealth,
+                                              self.rAttack,
+                                              self.cdone,
+                                              self.ratsInC)
+                        if self.pHeatlh > 0:
                             self.cdone = True
             elif r3Num == 2:
                 if self.ratsInC == 1:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone, self.ratsInC):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                          self.ratsInC)
+                    if self.pHeatlh > 0:
                         self.cdone = True
                 elif self.ratsInB == 2:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
-                              self.ratsInC) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.cdone, self.ratsInC):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                          self.ratsInC)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack,
+                                          self.cdone, self.ratsInC)
+                    if self.pHeatlh > 0:
                         self.cdone = True
                 elif self.ratsInC == 3:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
-                              self.ratsInC) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.cdone, self.ratsInC) and combat(self.pHealth, self.pAttack,
-                                                                                            "rat", self.rHealth,
-                                                                                            self.rAttack, self.cdone,
-                                                                                            self.ratsInC):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.cdone,
+                                          self.ratsInC)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack,
+                                          self.cdone, self.ratsInC)
+                    self.pHeatlh = combat(self.pHealth,
+                                          self.pAttack,
+                                          "rat",
+                                          self.rHealth,
+                                          self.rAttack,
+                                          self.cdone,
+                                          self.ratsInC)
+                    if self.pHeatlh > 0:
                         self.cdone = True
                 print("""
 
@@ -579,42 +621,61 @@ class Room:
                     self.cnorat()
                 else:
                     if self.ratsInD == 1:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
-                                  self.ratsInD):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                              self.ratsInD)
+                        if self.pHeatlh > 0:
                             self.ddone = True
                     elif self.ratsInD == 2:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
-                                  self.ratsInD) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack,
-                                                           self.ddone, self.ratsInD):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                              self.ratsInD)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack,
+                                              self.ddone, self.ratsInD)
+                        if self.pHeatlh > 0:
                             self.ddone = True
                     elif self.ratsInD == 3:
-                        if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
-                                  self.ratsInD) and combat(self.pHealth, self.pAttack, "rat", self.rHealth,
-                                                           self.rAttack,
-                                                           self.ddone, self.ratsInD) and combat(self.pHealth,
-                                                                                                self.pAttack,
-                                                                                                "rat", self.rHealth,
-                                                                                                self.rAttack,
-                                                                                                self.ddone,
-                                                                                                self.ratsInD):
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                              self.ratsInD)
+                        self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                              self.rAttack,
+                                              self.ddone, self.ratsInD)
+                        self.pHeatlh = combat(self.pHealth,
+                                              self.pAttack,
+                                              "rat",
+                                              self.rHealth,
+                                              self.rAttack,
+                                              self.ddone,
+                                              self.ratsInD)
+                        if self.pHeatlh > 0:
                             self.ddone = True
             elif r4num == 2:
                 if self.ratsInD == 1:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone, self.ratsInD):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                          self.ratsInD)
+                    if self.pHeatlh > 0:
                         self.ddone = True
-                elif self.ratsInB == 2:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
-                              self.ratsInD) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.ddone, self.ratsInD):
+                elif self.ratsInD == 2:
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                          self.ratsInD)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack,
+                                          self.ddone, self.ratsInD)
+                    if self.pHeatlh > 0:
                         self.ddone = True
                 elif self.ratsInD == 3:
-                    if combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
-                              self.ratsInD) and combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack,
-                                                       self.ddone, self.ratsInD) and combat(self.pHealth, self.pAttack,
-                                                                                            "rat", self.rHealth,
-                                                                                            self.rAttack, self.ddone,
-                                                                                            self.ratsInD):
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
+                                          self.ratsInD)
+                    self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth,
+                                          self.rAttack,
+                                          self.ddone, self.ratsInD)
+                    self.pHeatlh = combat(self.pHealth,
+                                          self.pAttack,
+                                          "rat",
+                                          self.rHealth,
+                                          self.rAttack,
+                                          self.ddone,
+                                          self.ratsInD)
+                    if self.pHeatlh > 0:
                         self.ddone = True
                 print("""
 

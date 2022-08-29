@@ -13,7 +13,9 @@ if __name__ == "__main__":
                | |__| | (_| | | | | | |  __/        
                 \_____|\__,_|_| |_| |_|\___|    
                 
-        Created By: [@] and Cr@sh Override
+        Created By: [@]* and Cr@sh Override
+        
+        *aKa CommandKing15
         
         Please pick a story
         
