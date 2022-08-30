@@ -23,13 +23,16 @@ if __name__ == "__main__":
             - GrugBug the Half-Orc is having trouble in the basement of his tavern,'The Groggy Dog.'
               Massive rats have taken residence and are eating his supplies; he has asked for your help!
         
-        [2] - In the Cave of the Goblin King!
+        **[2] - In the Cave of the Goblin King!
             - Residents of the village are under siege! Missing crops, stolen pets, and spooky noises at night!
               The Chief of the town, Phthnemod Mon, believes goblins from a cave nearby are to blame.
         
-        [3] - The Poisoned Well!
+        **[3] - The Poisoned Well!
             - The village's water supply has fallen prey to some bizarre ailment. Those who drink from it become
               perilously ill. Krek, the town's crazy old man, has an idea of what might be the cause... 
+              
+              
+              **Not done will crash!
     """)
     try:
         storyNum = int(input("Your response: "))

@@ -61,7 +61,7 @@ def combat(playerH, playerA, enemyN, enemyH, enemyA, roomToBeDone, amountofenemi
                     amountofenemies -= 1
                     roomToBeDone = True
                 else:
-                    print("You attacked the " + str(enemyN) + " and it has " + str(enemyH) + " HP left...")
+                    print("You attacked the diggity-dang " + str(enemyN) + " and it has " + str(enemyH) + " HP left...")
             else:
                 print("You missed!")
     return playerH
@@ -73,9 +73,9 @@ class Room:
         self.rAttack = radn(2)
         self.aHealth = radn(15)
         self.aAttack = radn(4)
-        self.pHealth = radn(20)
+        self.pHealth = radn(25)
         self.pAttack = radn(5)
-        self.ratsInB = 2 #random.randint(1, 3)
+        self.ratsInB = random.randint(1, 3)
         self.ratsInC = random.randint(1, 3)
         self.ratsInD = random.randint(1, 3)
         self.adone = True
@@ -156,7 +156,7 @@ class Room:
                 print("""
                 
                 
-                text here
+                Wow! What a rat fight! The little toother sure did bite! But you done smacked it.
                 
                 
                 
@@ -204,7 +204,10 @@ class Room:
                     print("""
     
     
-                    text here
+                    Wow! What a rat fight! The little toother sure did bite! But you done smacked it.
+                    And what a goopy rat mess you've made! Onward, brave traveler, toward who knows how many
+                    more bite-crazed rodents!
+                
     
     
     
@@ -240,8 +243,8 @@ class Room:
         if self.bdone:
             self.bnorat()
         else:
-            print("There are " + str(self.ratsInB) + "rats...")
-            print(""" It's fightin' time!
+            print("There are " + str(self.ratsInB) + " stinking little filthy awesome rats...")
+            print(""" It's rat fightin' time, big boy!
 
                             [1] Run
                             [2] Fight!
@@ -324,7 +327,10 @@ class Room:
                 print("""
 
 
-                                   text here
+                                   While there may once have been lovely floral-patterned wallpaper in this room,
+                                    it has now been replaced with stinking crimson rat blood splatter.
+                                    
+                                    It really accents the furniture!
 
 
 
@@ -366,14 +372,18 @@ class Room:
 
 
 
-                                       desc of room
+                            The room has nothing in it but a locked door, a hallway to the next room, a hole in 
+                           the wall, and a very nice oil painting of Carl Sagan. My stars!
                                        """)
                     time.sleep(2)
 
                     print("""
 
 
-                                       text here
+                                    While there may once have been lovely floral-patterned wallpaper in this room,
+                                    it has now been replaced with stinking crimson rat blood splatter.
+                                    
+                                    It really accents the furniture!
 
 
 
@@ -411,7 +421,7 @@ class Room:
         if self.cdone:
             self.cnorat()
         else:
-            print("There are " + str(self.ratsInC) + "rats...")
+            print("All up in here, fair traveler, there appear to be " + str(self.ratsInC) + " wriggly rats...")
             print("""  
             
             
@@ -502,7 +512,10 @@ class Room:
                 print("""
 
 
-                                               text here
+                    Oh god! Bits and pieces of rat hair and tender rat meat festoon your battle-sweatened head.
+                    Like a horrible ancient lord of rat-slaughter, you rise above the bloody maelstrom.
+                    
+                    Gross, one little bit got in your mouth! PFFFFT! PFFT!
 
 
 
@@ -544,14 +557,25 @@ class Room:
 
 
 
-                                                   desc of room
+                                    Room description?
+                
+                        More like room DESKription!
+                
+                        There is only a desc- i mean, desk in this room.
+                
+                        Why?
+                
+                        Let us ponder...
                                                    """)
                     time.sleep(2)
 
                     print("""
 
 
-                                                   text here
+                    Oh god! Bits and pieces of rat hair and tender rat meat festoon your battle-sweatened head.
+                    Like a horrible ancient lord of rat-slaughter, you rise above the bloody maelstrom.
+                    
+                    Gross, one little bit got in your mouth! PFFFFT! PFFT!
 
 
 
@@ -589,7 +613,9 @@ class Room:
         if self.ddone:
             self.dnorat()
         else:
-            print("There are " + str(self.ratsInD) + "rats...")
+            print("You walk into an especially dusty, dim, desperate, dire and most UNdesirable room.")
+            time.sleep(2)
+            print("You see, most eyeballedly, " + str(self.ratsInD) + " darn rats...")
             print("""  
 
 
@@ -624,6 +650,7 @@ class Room:
                         self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
                                               self.ratsInD)
                         if self.pHeatlh > 0:
+                            self.hasKey = True
                             self.ddone = True
                     elif self.ratsInD == 2:
                         self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
@@ -632,6 +659,7 @@ class Room:
                                               self.rAttack,
                                               self.ddone, self.ratsInD)
                         if self.pHeatlh > 0:
+                            self.hasKey = True
                             self.ddone = True
                     elif self.ratsInD == 3:
                         self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
@@ -647,12 +675,14 @@ class Room:
                                               self.ddone,
                                               self.ratsInD)
                         if self.pHeatlh > 0:
+                            self.hasKey = True
                             self.ddone = True
             elif r4num == 2:
                 if self.ratsInD == 1:
                     self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
                                           self.ratsInD)
                     if self.pHeatlh > 0:
+                        self.hasKey = True
                         self.ddone = True
                 elif self.ratsInD == 2:
                     self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
@@ -661,6 +691,7 @@ class Room:
                                           self.rAttack,
                                           self.ddone, self.ratsInD)
                     if self.pHeatlh > 0:
+                        self.hasKey = True
                         self.ddone = True
                 elif self.ratsInD == 3:
                     self.pHeatlh = combat(self.pHealth, self.pAttack, "rat", self.rHealth, self.rAttack, self.ddone,
@@ -676,11 +707,16 @@ class Room:
                                           self.ddone,
                                           self.ratsInD)
                     if self.pHeatlh > 0:
+                        self.hasKey = True
                         self.ddone = True
                 print("""
 
 
-                                                           text here
+                        Jeez, who'd've thought fighting rats would be so tiring!
+                        And some people do this for fun?
+                        
+                        Giving one of the rats another good kick, out pops a shiny metal key, with a noise
+                        like a bottle cap popping off of a crisp, cool, cola.
 
 
 
@@ -712,6 +748,11 @@ class Room:
 
 
 
+                A fantastic gallery of lizard sculptures presents itself to you.
+                
+                Oh, what lovely lizards!
+                
+                The floor is made of dirt, but dang what wonderful lizards.
 
 
 
@@ -720,15 +761,18 @@ class Room:
 
 
 
-
-                                                               desc of room
+                                                               
                                                                """)
                     time.sleep(2)
 
                     print("""
 
 
-                                                               text here
+                                                            Jeez, who'd've thought fighting rats would be so tiring!
+                        And some people do this for fun?
+                        
+                        Giving one of the rats another good kick, out pops a shiny metal key, with a noise
+                        like a bottle cap popping off of a crisp, cool, cola.
 
 
 
@@ -762,14 +806,122 @@ class Room:
         if self.hasGrain:
             pass
         else:
-            pass
+            print(
+                "This room appears to contain only an old fermentation barrel, that looks to need some kind of grain.")
+            time.sleep(1.5)
+            print("You walk up to have a closer look but here a growling noise coming from behind you...")
+            time.sleep(1.6)
+            print("""
+
+
+
+
+
+                       [1] Investigate the sound...
+                       [2] Run in fear
+
+
+                       """)
+            try:
+                r5num = int(input("Your response: "))
+            except ValueError:
+                print("Your response can not be a string; try a number.")
+                r5num = input("Your response: ")
+
+            if int(r5num) > 2 or int(r5num) < 1:
+                print("Your response can not be more than 2 or less than 0")
+                try:
+                    r5num = int(input("Your response: "))
+                except ValueError:
+                    print("Your response can not be a string; try a number.")
+                    r5num = input("Your response: ")
+
+            if r5num == 2:
+                if miss(-20, 13) == 1:
+                    if miss(-20, 5) == 1:
+                        print("You ran into a liquid puddle and tripped.")
+                        time.sleep(0.5)
+                        print("Sadly, you died when you slipped...")
+                        time.sleep(2)
+                        print("Should have had higher grip shoos I guess.")
+                        time.sleep(2)
+                        exit(0)
+                    else:
+                        print("You were able to run your way back upstairs.")
+                        time.sleep(2)
+                        print("The owner was very mad at you that you could not fix his problem and did not let you "
+                              "go back.")
+                        time.sleep(2)
+                        exit(0)
+                else:
+                    print("You were not able to find an escape route.")
+                    time.sleep(1)
+                    print("""
+
+
+
+
+
+                               [1] Investigate the sound...
+
+
+                               """)
+                    try:
+                        r5num = int(input("Your response: "))
+                    except ValueError:
+                        print("Your response can not be a string; try a number.")
+                        r5num = input("Your response: ")
+
+                    if int(r5num) > 2 or int(r5num) < 1:
+                        print("Your response can not be more than 2 or less than 0")
+                        try:
+                            r5num = int(input("Your response: "))
+                        except ValueError:
+                            print("Your response can not be a string; try a number.")
+                            r5num = input("Your response: ")
+            elif r5num == 1:
+                print("You investigate the sound...")
+                time.sleep(2)
+                print("As you are looking a raccoon carrying a grain bag in his slobber encrusted mouth, jumps out at "
+                      "you.")
+                time.sleep(1)
+                self.pHeatlh = combat(self.pHeatlh, self.pAttack, "raccoon", self.aHealth, self.aAttack, self.ddone, 1)
+                if self.pHeatlh > 0:
+                    time.sleep(1)
+                    print("You did it!")
+                    time.sleep(1)
+                    print("You got the grain bag and used it to fix the owners brewing problem!")
+                    time.sleep(3)
+                    print("""
+                    
+                        On your victorious walk out of 'the groggy dog' the owner tanks you so much for your service. 
+                        He also says, 'You are welcome back anytime, Hero Traveler...'. at that he turns to go back in 
+                        but stops and says, 'some other towns could use someone like you. I know someone who has some 
+                        goblin problems. You should look in to helping him too.'
+                    
+                    
+                    """)
+                    time.sleep(13)
+                    print("Thankyou For Playing!")
+                    time.sleep(1)
+                    print("If you would like to play the other endings or the other stories, restart the game and go "
+                          "for it.")
+                    time.sleep(1)
+                    print("If you would like to get the scource code you can find that "
+                          "here:'https://github.com/CommandKing15/AdventureGame'. You can use it in your "
+                          "own projects just give CommandKing15 credit for it.")
+                    time.sleep(3)
+                    print("Thanks to Cr@sh Override for most of the text and [@] for programming this mess.")
+                    time.sleep(10)
+                    exit(0)
 
     def anorat(self):
         if not self.hasKey:
             print("""
     
     
-                       text here
+                       Ooh! Smashed rat parts! And what's this?
+                       Twenty dollars?! Your nephew finally lost a bet!
     
     
     
@@ -816,7 +968,8 @@ class Room:
                 print("""
     
     
-                           text here
+                          Ooh! Smashed rat parts! And what's this?
+                       Twenty dollars?! Your nephew finally lost a bet!
     
     
     
@@ -848,7 +1001,9 @@ class Room:
             print("""
 
 
-                       text here
+                       Back into the first room, eh?
+                       
+                       If you're reading this, you owe your uncle twenty dollars.
 
 
 
@@ -890,13 +1045,15 @@ class Room:
 
 
 
-                           The room has nothing in it but a locked door, a hallway to the next room, and a hole in 
-                           the wall. """)
+                           The room has nothing in it but a locked door, a hallway to the next room, a hole in 
+                           the wall, and a very nice oil painting of Carl Sagan. My stars!""")
 
                 print("""
 
 
-                           text here
+                           Back into the first room, eh?
+                       
+                       If you're reading this, you owe your uncle twenty dollars.
 
 
 
@@ -930,7 +1087,10 @@ class Room:
         print("""
 
 
-                   text here
+                   Dang! Still lookin' for rats to kill, huh?
+                   Okay, you do you.
+                   
+                   Creep.
 
 
 
@@ -960,6 +1120,10 @@ class Room:
         if r2Num2 == 1:
             print("""
 
+                    Looking around the murky dimness, you see a pile of cowboy hats in one corner.
+                    Hanging on the walls are a series of very fashionably festooned mannequins.
+                    
+                    Ooh what lovely seasonable styles!
 
 
 
@@ -971,15 +1135,17 @@ class Room:
 
 
 
-
-                       desc of room
+                       
                        """)
             time.sleep(2)
 
             print("""
 
 
-                       text here
+                       Dang! Still lookin' for rats to kill, huh?
+                   Okay, you do you.
+                   
+                   Creep.
 
 
 
@@ -1017,7 +1183,9 @@ class Room:
         print("""
 
 
-                   text here
+                   Rats live on no evil star? 
+                   
+                   Palindrome THIS you ratless room!
 
 
 
@@ -1047,6 +1215,16 @@ class Room:
         if r3Num2 == 1:
             print("""
 
+                Room description?
+                
+                More like room DESKription!
+                
+                There is only a desc- i mean, desk in this room.
+                
+                Why?
+                
+                Let us ponder...
+                    
 
 
 
@@ -1057,16 +1235,16 @@ class Room:
 
 
 
-
-
-                       room desc
+                       
                        """)
             time.sleep(2)
 
             print("""
 
 
-                       text here
+                       Rats live on no evil star? 
+                   
+                   Palindrome THIS you ratless room!
 
 
 
@@ -1104,7 +1282,13 @@ class Room:
         print("""
 
 
-                   text here
+                  Knock knock!
+                  
+                  Who's there?
+                  
+                  Not rats!
+                  
+                  BWAAAAH BWA BWA BWAAAAAAH!
 
 
 
@@ -1133,6 +1317,11 @@ class Room:
         if r4Num2 == 1:
             print("""
 
+                A fantastic gallery of lizard sculptures presents itself to you.
+                
+                Oh, what lovely lizards!
+                
+                The floor is made of dirt, but dang what wonderful lizards.
 
 
 
@@ -1144,15 +1333,20 @@ class Room:
 
 
 
-
-                       room desc
+                       
                        """)
             time.sleep(2)
 
             print("""
 
 
-                       text here
+                       Knock knock!
+                  
+                  Who's there?
+                  
+                  Not rats!
+                  
+                  BWAAAAH BWA BWA BWAAAAAAH!
 
 
 
