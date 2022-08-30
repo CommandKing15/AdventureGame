@@ -157,7 +157,9 @@ class Room:
                 print("""
                 
                 
-                Wow! What a rat fight! The little toother sure did bite! But you done smacked it.
+                    Wow! What a rat fight! The little toother sure did bite! But you done smacked it.
+                    And what a goopy rat mess you've made! Onward, brave traveler, toward who knows how many
+                    more bite-crazed rodents!
                 
                 
                 
@@ -198,16 +200,15 @@ class Room:
                     
                     
                     
-                    The room has nothing in it but a locked door, a hallway to the next room, and a hole in the wall.
+                            The room has nothing in it but a locked door, a hallway to the next room, a hole in 
+                           the wall, and a very nice oil painting of Carl Sagan. My stars!
                     """)
                     time.sleep(2)
 
                     print("""
     
     
-                    Wow! What a rat fight! The little toother sure did bite! But you done smacked it.
-                    And what a goopy rat mess you've made! Onward, brave traveler, toward who knows how many
-                    more bite-crazed rodents!
+
                 
     
     
@@ -373,18 +374,16 @@ class Room:
 
 
 
-                            The room has nothing in it but a locked door, a hallway to the next room, a hole in 
-                           the wall, and a very nice oil painting of Carl Sagan. My stars!
+                    Looking around the murky dimness, you see a pile of cowboy hats in one corner.
+                    Hanging on the walls are a series of very fashionably festooned mannequins.
+                    
+                    Ooh what lovely seasonable styles!
                                        """)
                     time.sleep(2)
 
                     print("""
 
 
-                                    While there may once have been lovely floral-patterned wallpaper in this room,
-                                    it has now been replaced with stinking crimson rat blood splatter.
-                                    
-                                    It really accents the furniture!
 
 
 
@@ -572,11 +571,7 @@ class Room:
 
                     print("""
 
-
-                    Oh god! Bits and pieces of rat hair and tender rat meat festoon your battle-sweatened head.
-                    Like a horrible ancient lord of rat-slaughter, you rise above the bloody maelstrom.
-                    
-                    Gross, one little bit got in your mouth! PFFFFT! PFFT!
+!
 
 
 
@@ -614,7 +609,7 @@ class Room:
         if self.ddone:
             self.dnorat()
         else:
-            print("You walk into an especially dusty, dim, desperate, dire and most UNdesirable room.")
+            print("You walk into an especially dusty, dim, desperate, dire and most Undesirable room.")
             time.sleep(2)
             print("You see, most eyeballedly, " + str(self.ratsInD) + " darn rats...")
             print("""  
@@ -769,12 +764,6 @@ class Room:
                     print("""
 
 
-                                                            Jeez, who'd've thought fighting rats would be so tiring!
-                        And some people do this for fun?
-                        
-                        Giving one of the rats another good kick, out pops a shiny metal key, with a noise
-                        like a bottle cap popping off of a crisp, cool, cola.
-
 
 
 
@@ -856,30 +845,51 @@ class Room:
                         exit(0)
                 else:
                     print("You were not able to find an escape route.")
+                    time.sleep(4)
+                    print("Sadly, the game dev was too arrogant to notice that their code was bugged.")
+                    time.sleep(2)
+                    print("So I guess you can just leave now...")
+                    time.sleep(3)
+                    print("Why haven't you left yet?")
+                    time.sleep(3)
+                    print("Just go there is nothing for you here!")
+                    time.sleep(3)
+                    print("OOOOH, I see. You want me to close the game for you.")
+                    time.sleep(3)
+                    print("To that I say HAHA. I will do no such thing.")
+                    time.sleep(2)
+                    print("It is so easy for you just to click that 'x' button. Why do you want me to do it.")
+                    time.sleep(3)
+                    print("Well excuse me mr/ms/mrs person for thinking that you were competent at all.")
                     time.sleep(1)
-                    print("""
+                    print("Well... if you do not close the game now, I shall pronounce you dead.")
+                    time.sleep(5)
+                    print("Ok dead person.")
+                    time.sleep(3)
+                    print("Hello is there anyone there?")
+                    time.sleep(4)
+                    print("We need somebody to clean up the dead player that was just playing this game.")
+                    time.sleep(4)
+                    print("Well if no one comes, then I will just let this game sit for the next few minutes...")
+                    time.sleep(5)
+                    print("I think 5 minutes should do...")
+                    time.sleep(2)
+                    print("If there is still someone out there this game will close in 5 minutes and will not reopen.")
+                    time.sleep(4)
+                    print("You will have to manually re-run the exe or py file...")
+                    time.sleep(5)
+                    print("See you in 5 minutes")
+                    time.sleep(300)
+                    print("You are still here?!")
+                    time.sleep(2)
+                    print("Well if I have made you wait this long...")
+                    time.sleep(3)
+                    print("I will close the game for you in another 30 seconds...")
+                    time.sleep(30)
+                    print("Enjoy your reward, dead person.")
+                    time.sleep(3)
+                    exit(0)
 
-
-
-
-
-                               [1] Investigate the sound...
-
-
-                               """)
-                    try:
-                        r5num = int(input("Your response: "))
-                    except ValueError:
-                        print("Your response can not be a string; try a number.")
-                        r5num = input("Your response: ")
-
-                    if int(r5num) > 2 or int(r5num) < 1:
-                        print("Your response can not be more than 2 or less than 0")
-                        try:
-                            r5num = int(input("Your response: "))
-                        except ValueError:
-                            print("Your response can not be a string; try a number.")
-                            r5num = input("Your response: ")
             elif r5num == 1:
                 print("You investigate the sound...")
                 time.sleep(2)
@@ -908,7 +918,7 @@ class Room:
                     print("If you would like to play the other endings or the other stories, restart the game and go "
                           "for it.")
                     time.sleep(1)
-                    print("If you would like to get the scource code you can find that "
+                    print("If you would like to get the source code you can find that "
                           "here:'https://github.com/CommandKing15/AdventureGame'. You can use it in your "
                           "own projects just give CommandKing15 credit for it.")
                     time.sleep(3)
@@ -988,8 +998,8 @@ class Room:
     
     
     
-                           The room has nothing in it but a locked door, a hallway to the next room, and a hole in 
-                           the wall. """)
+                           The room has nothing in it but a locked door, a hallway to the next room, a hole in 
+                           the wall, and a very nice oil painting of Carl Sagan. My stars! """)
 
                 print("""
     
