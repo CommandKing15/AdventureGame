@@ -79,12 +79,12 @@ class Room:
         self.ratsInB = random.randint(1, 3)
         self.ratsInC = random.randint(1, 3)
         self.ratsInD = random.randint(1, 3)
-        self.adone = True
+        self.adone = False
         self.bdone = False
         self.cdone = False
         self.ddone = False
         self.lockeddone = False
-        self.hasKey = True
+        self.hasKey = False
         self.hasGrain = False
 
     def a(self):
