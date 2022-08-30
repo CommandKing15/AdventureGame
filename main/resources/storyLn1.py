@@ -69,6 +69,7 @@ def combat(playerH, playerA, enemyN, enemyH, enemyA, roomToBeDone, amountofenemi
 
 class Room:
     def __init__(self):
+        self.pHeatlh = radn(25)
         self.rHealth = radn(10)
         self.rAttack = radn(2)
         self.aHealth = radn(15)
@@ -83,7 +84,7 @@ class Room:
         self.cdone = False
         self.ddone = False
         self.lockeddone = False
-        self.hasKey = False
+        self.hasKey = True
         self.hasGrain = False
 
     def a(self):
@@ -895,7 +896,7 @@ class Room:
                     print("""
                     
                         On your victorious walk out of 'the groggy dog' the owner tanks you so much for your service. 
-                        He also says, 'You are welcome back anytime, Hero Traveler...'. at that he turns to go back in 
+                        He also says, 'You are welcome back anytime, Hero Traveler...'. At that he turns to go back in 
                         but stops and says, 'some other towns could use someone like you. I know someone who has some 
                         goblin problems. You should look in to helping him too.'
                     
@@ -912,7 +913,32 @@ class Room:
                           "own projects just give CommandKing15 credit for it.")
                     time.sleep(3)
                     print("Thanks to Cr@sh Override for most of the text and [@] for programming this mess.")
-                    time.sleep(10)
+                    time.sleep(20)
+                    print("""
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    """)
                     exit(0)
 
     def anorat(self):
@@ -1022,8 +1048,8 @@ class Room:
                 print("Your response can not be a string; try a number.")
                 r1Num2 = input("Your response: ")
 
-            if int(r1Num2) > 2 or int(r1Num2) < 1:
-                print("Your response can not be more than 2 or less than 0")
+            if int(r1Num2) > 3 or int(r1Num2) < 1:
+                print("Your response can not be more than 3 or less than 0")
                 try:
                     r1Num2 = int(input("Your response: "))
                 except ValueError:
