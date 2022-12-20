@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 
         Created By: [@]* and Cr@sh Override
         
-        *aKa CommandKing15
+        *aKa TheProgrammerKnownAs[@]
         
         Please pick a story
         
