@@ -1415,38 +1415,7 @@ class Room:
 class Game:
     def __init__(self):
         self.room = Room()
-        print("""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    """)
-
+        print('\033c')
         print("Greetings, traveler!")
         time.sleep(2.3)
         print("""
